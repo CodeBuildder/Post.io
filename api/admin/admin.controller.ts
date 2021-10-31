@@ -22,9 +22,9 @@ export const registerAdmin = async (adminData: adminDB) => {
       address: adminData.address,
     };
     const admin = new Admin(newAdminData);
-    console.log(admin);
+
     const response = await admin.save();
-    console.log(response);
+
     return admin;
   } catch (err) {
     throw err;

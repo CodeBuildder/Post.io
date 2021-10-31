@@ -29,8 +29,8 @@ app.use((error: HttpError, req: Request, res: Response, next: NextFunction) => {
   }
 });
 app.use("*", (req: Request, res: Response) => {
-  res.status(404).json({ message: "Resource not found" });
+  res.status(404).json({ message: "Resource not found !" });
 });
 app.listen(port, () => {
-  console.log(`🎉🎉 - Wakey Wakey, your Server is up and running at ${port}!`);
+  console.log(`🎉🎉 - Wakey Wakey, your Server is up and running at ${port}`);
 });
