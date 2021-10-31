@@ -9,7 +9,6 @@ import { Company, Admin } from "../admin/admin.schema";
 import { User } from "../auth/auth.schema";
 import { adminSchema } from "../admin/admin.schema";
 import { userSchema } from "../auth/auth.schema";
-//import { connectDB } from "./db/db.connect";
 
 declare module "jsonwebtoken" {
   export interface UserIDJwtPayload extends jwt.JwtPayload {
@@ -37,8 +36,6 @@ export const verifiedAdmin = async (
         jwt.verify(authToken, process.env.JWT_SECRET || "")
       );
     } catch (err) {
-      console.log("err in middleware");
-      console.log(err);
       next(err);
     }
     let user;
